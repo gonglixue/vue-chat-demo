@@ -14,7 +14,8 @@ module.exports = {
     resolve:{
         extensions:['','.js','.vue'],
         alias:{
-            components:path.join(__dirname,'./src/components')
+            components:path.join(__dirname,'./src/components'),
+            'vue$': 'vue/dist/vue.js'
         },
     },
     resolveLoader:{
@@ -24,7 +25,7 @@ module.exports = {
     module:{
         loaders:[
             { test:/\.vue$/, loader:'vue' },
-            { test:/\.js$/, loader:'babel', exclude:/node_modules/ },
+            { test:/\.js$/, loader:'babel?presets=es2015', exclude:/node_modules/ },
             { test:/\.css$/, loader:'vue-style-loader!css-loader'},
             { test:/\.less$/, loader:'vue-style-loader!css-loader!less-loader'},
             { test:/\.(png|jpg|gif|svg)$/, loader:'file',
