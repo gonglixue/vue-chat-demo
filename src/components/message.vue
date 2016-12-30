@@ -1,3 +1,23 @@
+<script>
+    module.exports = {
+        vuex:{
+            getters:{
+                user: ({user}) => user,
+                session: ({sessions, currentSessionId}) => sessions.find(session=>session.id === currentSessionId)
+            }
+        },
+        filters:{
+            //将日期过滤为hour:minutes
+            time(date){
+                if(typeof date === 'string'){
+                    date = new Date(date);
+                }
+                return date.getHours() + ':' + date.getMinutes();
+            }
+        }
+    }
+</script>
+
 <template>
     <div class="message" v-scroll-bottom="session.messages">
         <ul v-if="session">
@@ -16,6 +36,6 @@
 
 <style lang="less" scoped>
     .message{
-        
+
     }
 </style>
