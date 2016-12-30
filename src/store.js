@@ -10,7 +10,7 @@ const now = new Date();
 
 const store = new Vuex.Store({
     state:{
-        //当前用户
+        //当前用户（我）
         user:{
             name:'coffce',
             img:'dist/images/1.jpg'
