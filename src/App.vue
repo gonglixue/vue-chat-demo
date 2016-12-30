@@ -1,7 +1,11 @@
 <script>
-module.exports={
+    import store from './store';
+    console.log('app.vue')
+    module.exports =  {
+        store:store,
         created:function(){
-            console.log('created')
+            console.log('created');
+            store.commit('SET_FILTER_KEY')
         }
     }
 </script>

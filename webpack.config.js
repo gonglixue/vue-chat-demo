@@ -25,7 +25,7 @@ module.exports = {
     module:{
         loaders:[
             { test:/\.vue$/, loader:'vue' },
-            { test:/\.js$/, loader:'babel?presets=es2015', exclude:/node_modules/ },
+            { test:/\.js$/, loader:'babel-loader',query:{presets:['es2015']}, exclude:/node_modules/ },
             { test:/\.css$/, loader:'vue-style-loader!css-loader'},
             { test:/\.less$/, loader:'vue-style-loader!css-loader!less-loader'},
             { test:/\.(png|jpg|gif|svg)$/, loader:'file',

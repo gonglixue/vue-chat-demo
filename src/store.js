@@ -3,6 +3,7 @@
  */
 import Vue from 'vue';
 import Vuex from 'vuex';
+
 Vue.use(Vuex);
 
 const now = new Date();
@@ -69,8 +70,23 @@ const store = new Vuex.Store({
         //搜索
         SET_FILTER_KEY(state, value){
             state.filterKey = value;
+            console.log('search ' + value)
         }
-    }
+    },
+    // actions:{
+    //     initData(context){
+    //         context.commit('INIT_DATA')
+    //     },
+    //     sendMessage(context,content){
+    //         context.commit('SEND_MESSAGE',content)
+    //     },
+    //     selectSession(context, id){
+    //         context.commit('SELECT_SESSION', id);
+    //     },
+    //     search(context, value){
+    //         context.commit('SET_FILTER_KEY', value);
+    //     }
+    // }
 });
 
 store.watch(
@@ -89,5 +105,16 @@ export const actions = {
     initData: ({ dispatch }) => dispatch('INIT_DATA'),
     sendMessage: ({ dispatch }, content) => dispatch('SEND_MESSAGE', content),
     selectSession: ({ dispatch }, id) => dispatch('SELECT_SESSION', id),
-    search: ({ dispatch }, value) => dispatch('SET_FILTER_KEY', value)
+    //search: ({ dispatch }, value) => dispatch('SET_FILTER_KEY', value)
+    search: ({ dispatch }, value) => console.log('search')
 };
+// modules.export = {
+//     store:store,
+//     actions:{
+//         initData: ({ dispatch }) => dispatch('INIT_DATA'),
+//         sendMessage: ({ dispatch }, content) => dispatch('SEND_MESSAGE', content),
+//         selectSession: ({ dispatch }, id) => dispatch('SELECT_SESSION', id),
+//         //search: ({ dispatch }, value) => dispatch('SET_FILTER_KEY', value)
+//         search: ({ dispatch }, value) => console.log('search')
+//     }
+// }
